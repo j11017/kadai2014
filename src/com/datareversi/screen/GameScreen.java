@@ -34,9 +34,6 @@ import com.datareversi.game_screen_process.ScreenPosition;
  * @author doi
  * 
  * 必ずModeSelectScreenから呼び出すこと
- * 
- * 早い手数で終了するとINSERTクエリが失敗する<br>
- * 正常にみられる為重要な問題ではないが，時間があれば直そう。
  *
  */
 public class GameScreen extends Screen{
@@ -129,6 +126,10 @@ public class GameScreen extends Screen{
 					for(int x = 0; x < ScreenPosition.getBoardwidth(); x++)
 						for(int y = 0; y < ScreenPosition.getBoardheight(); y++)
 							if(inBounds(event, screenPosition.getGridSquare(x, y))) {
+								System.out.println("人が石を打つ");
+								System.out.println("X: " + x);
+								System.out.println("Y: " + y);
+								
 								if(reversibleDiscs[x][y] > 0)
 									setHumanTheoryEvaluation(boardOnDiscs, no_Disc, x, y);
 								boardUpDated = setDisc(x, y, boardOnDiscs, reversibleDiscs, turn,

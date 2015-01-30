@@ -276,7 +276,7 @@ public class ScreenPosition {
 		return screenSquare;
 	}
 	public int[] getGridSquare(int x, int y) {
-		return new int[]{GridStartX[x], GridStartY[x], GridWidthX[x], GridWidthY[y]};
+		return new int[]{GridStartX[x], GridStartY[y], GridWidthX[x], GridWidthY[y]};
 	}
 
 }
