@@ -25,7 +25,6 @@ import com.datareversi.Theory;
 import com.datareversi.framework.Game;
 import com.datareversi.framework.Graphics;
 import com.datareversi.framework.Input.TouchEvent;
-import com.datareversi.framework.Pixmap;
 import com.datareversi.framework.Screen;
 import com.datareversi.game_screen_process.GameState;
 import com.datareversi.game_screen_process.ScreenPosition;
@@ -996,26 +995,6 @@ public class GameScreen extends Screen{
 		Globals.endTime = String.valueOf(DateFormat.format(Globals.datePattern, date));
 		for(int i = 0; i < Globals.evaluationValue.length; i++) {
 			Globals.evaluationValue[i] = String.valueOf(evaluations[evaluations.length - i - 2]);
-		}
-	}
-	
-	private void debugReversibleDiscs(int reversibleDiscs[][]) {
-		for(int x = 0; x < ScreenPosition.getBoardwidth(); x++) {
-			for(int y = 0; y < ScreenPosition.getBoardheight(); y++) {
-				System.out.println("x: " + x + " y: " + y + " " + reversibleDiscs[x][y]);
-			}
-		}
-	}
-	
-	
-	private void debugBoardOnDiscs(int boardOnDiscs[][]) {
-		System.out.println("boardOnDiscs");
-		
-		char outputChar[] = {'□', '●', '○'};
-		for(final int[] i: boardOnDiscs) {
-			for(final int j : i)
-				System.out.print(outputChar[j]);
-			System.out.print('\n');
 		}
 	}
 
